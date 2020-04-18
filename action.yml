@@ -1,0 +1,19 @@
+name: docker push 
+description: Pushes a docker image to docker hub
+inputs:
+  image:
+    description: name of the docker image
+    required: true
+  tag:
+    description: tag of the docker image
+    required: true
+    default: latest
+  username:
+    description: username for docker hub
+    required: true
+  password:
+    description: password for docker hub
+    required: true
+runs:
+  using: node12
+  main: dist/index.js
