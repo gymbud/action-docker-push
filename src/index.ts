@@ -17,7 +17,7 @@ const run = async () => {
    }
 
    console.log("Login to docker hub")
-   await exec(`docker login -u ${username} -p ${password}`)
+   await exec(`echo ${password} | docker login -u ${username} --password-stdin`)
 
    console.log("Push to docker hub")
    await exec(`docker push ${image}:${tag}`)
