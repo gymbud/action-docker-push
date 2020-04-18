@@ -14,6 +14,10 @@ inputs:
   password:
     description: password for docker hub
     required: true
+  on-pr:
+    description: also push on pull requests
+    required: true
+    default: false
 runs:
   using: node12
   main: dist/index.js
