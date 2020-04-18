@@ -4489,7 +4489,7 @@ const run = async () => {
         return;
     }
     console.log("Login to docker hub");
-    await exec_1.exec(`echo ${password} | docker login -u ${username} --password-stdin`);
+    await exec_1.exec(`echo "${password}" | docker login -u ${username} --password-stdin`);
     console.log("Push to docker hub");
     await exec_1.exec(`docker push ${image}:${tag}`);
     console.log("All done!");
